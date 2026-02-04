@@ -1,0 +1,14 @@
+.{
+    .name = .aladdin_md5,
+    .version = "1.4.0",
+    .fingerprint = 0xdcfcf50344c1bc54, // Changing this has security and trust implications.
+
+    .minimum_zig_version = "0.15.2",
+
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "md5.c",
+        "md5.h",
+    },
+}

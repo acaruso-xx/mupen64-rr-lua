@@ -1,0 +1,19 @@
+.{
+    .name = .spdlog,
+    .version = "1.17.0",
+    .fingerprint = 0x19cef80ac933651, // Changing this has security and trust implications.
+
+    .minimum_zig_version = "0.15.2",
+
+    .dependencies = .{
+        .spdlog = .{
+            .url = "https://github.com/gabime/spdlog/archive/refs/tags/v1.17.0.tar.gz",
+            .hash = "N-V-__8AALV4EgBbl10jtpTgXbAMeWyE5t24VkpFyu6JKaWR",
+        },
+    },
+
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+    },
+}

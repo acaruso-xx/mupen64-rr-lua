@@ -1,5 +1,7 @@
 .idea/
+.zig-cache/
 build/
+zig-out/
 
 
 ## CMake gitignore file.

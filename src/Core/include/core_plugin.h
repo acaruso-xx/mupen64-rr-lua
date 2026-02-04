@@ -13,6 +13,8 @@
 
 #pragma once
 
+#include <CommonPCH.h>
+
 #ifdef _WIN32
 #define EXPORT __declspec(dllexport)
 #define CALL __cdecl

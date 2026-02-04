@@ -1,0 +1,19 @@
+.{
+    .name = .libdeflate,
+    .version = "1.25.0",
+    .fingerprint = 0x3583a8ca6a388075, // Changing this has security and trust implications.
+
+    .minimum_zig_version = "0.15.2",
+
+    .dependencies = .{
+        .libdeflate = .{
+            .url = "https://github.com/ebiggers/libdeflate/releases/download/v1.25/libdeflate-1.25.tar.gz",
+            .hash = "N-V-__8AACODCwCL9flGfJkJ2IlkP36ExXwOhPuIUgIFfB8l",
+        },
+    },
+
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+    },
+}
