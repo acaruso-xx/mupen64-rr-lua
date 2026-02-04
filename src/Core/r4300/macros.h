@@ -144,7 +144,14 @@ inline uint16_t read_x87_status_word()
 
 inline uint16_t read_x87_status_word()
 {
+#ifdef _MSC_VER
     return _status87() & 0x3F;
+#else
+    uint16_t x87_status_word;
+
+    __asm fstsw x87_status_word;
+    return x87_status_word;
+#endif
 }
 
 // asm converter that respects rounding modes
