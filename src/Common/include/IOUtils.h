@@ -300,6 +300,8 @@ inline std::filesystem::path exe_path()
         throw std::system_error(GetLastError(), std::system_category());
     }
     return std::filesystem::path(path_buffer);
+#elif !defined(__APPLE__)
+    return std::filesystem::canonical("/proc/self/exe");
 #endif
 }
 // Gets the path of the current executable file.
