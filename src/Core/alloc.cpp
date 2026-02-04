@@ -8,7 +8,7 @@
 #include <alloc.h>
 
 #ifdef _WIN32
-#include <Windows.h>
+#include <windows.h>
 #endif
 
 #if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))

@@ -7,7 +7,8 @@
 
 #if defined(_WIN32)
 #define NOMINMAX
-#include <Windows.h>
+#include <windows.h>
+#include <share.h> // _SH_DENYNO
 #elif defined(__linux__)
 #include <stdio.h>
 #endif
