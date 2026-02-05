@@ -12,12 +12,13 @@
 		bg_color_to,
 		dark
 	} = $props();
+
+	const bg_style = $derived(`
+	background: repeating-linear-gradient(45deg, ${bg_color_from} 0 1px, transparent 1px 20px), repeating-linear-gradient(-45deg, ${bg_color_from} 0 1px, transparent 1px 20px), linear-gradient(45deg, ${bg_color_from}, ${bg_color_to});
+	`);
 </script>
 
-<section
-	class="p-16 shadow-md"
-	style="background: linear-gradient(45deg, {bg_color_from}, {bg_color_to})"
->
+<section class="border-b border-base-100 p-16 shadow-lg" style={bg_style}>
 	<div class="mx-auto max-w-6xl">
 		<div
 			class="flex flex-row flex-wrap items-center justify-center gap-12 {dark
@@ -26,7 +27,9 @@
 		>
 			<img src={logo} alt="{name} Logo" class="object-fit w-48" />
 			<div class="flex flex-col gap-4">
-				<div class="flex flex-col items-center gap-2 text-5xl leading-tight font-bold md:flex-row text-center">
+				<div
+					class="flex flex-col items-center gap-2 text-center text-5xl leading-tight font-bold md:flex-row"
+				>
 					<p>{name}</p>
 					<p
 						class="bg-gradient-to-b from-white to-black bg-clip-text text-transparent"
@@ -36,12 +39,13 @@
 					</p>
 				</div>
 				<p class="text-center text-lg md:text-left">{description}</p>
-				<div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
+				<div class="flex flex-wrap items-center justify-center gap-4 md:justify-start">
 					{#if button}
 						{@render button()}
 					{/if}
-					<a href={repository} class="button">
-						<img src={github} alt="Github Logo" class={dark ? 'invert' : ''} />
+
+					<a href={repository} class="btn">
+						<img width="24" src={github} alt="Github Logo" class="dark:invert" />
 						<p>See on GitHub</p>
 					</a>
 				</div>
