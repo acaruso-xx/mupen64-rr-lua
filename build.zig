@@ -2,7 +2,7 @@ const std = @import("std");
 
 const default_target: std.Target.Query = .{
     .os_tag = .windows,
-    .cpu_arch = .x86_64,
+    .cpu_arch = .x86,
 };
 
 const flags = &.{
